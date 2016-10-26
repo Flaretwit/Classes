@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string.h>
-
+//videogame.h file
 using namespace std;
 
-class VideoGames{
+class VideoGame: public Media{
 	public:
-		VideoGame(char*, int*, char*, float*)
+		VideoGame(char*, int*, char*, float*);
 		char* getTitle();
 		int* getYear();
 		char* getPublisher();

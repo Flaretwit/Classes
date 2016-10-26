@@ -1,12 +1,37 @@
 #include <iostream>
 #include <string.h>
-#include "VideoGame.h"
+#include "videogame.h"
 
 using namespace std;
 
-struct VideoGame
 int main() {
 
 return 0;
 
-}:
+};
+
+videogame::VideoGame(char* newtitle, int* newyear, char* newpublisher, float* newrating) {
+	title = newtitle;
+	year = newyyer;
+	publisher = newpublisher
+	rating = newrating;
+}
+
+char* videogame::getTitle() {
+	return title;
+}
+
+int* videogame::getYear() {
+	return year;
+}
+
+char* videogame::getPublisher() {
+	return publisher;
+}
+float* videogame::getRating() {
+	return rating;
+}
+
+
+
+
