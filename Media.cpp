@@ -5,10 +5,6 @@
 
 using namespace std;
 
+Media::Media() {
 
-int main() {
-	return 0;
-};
-
-
-
+}

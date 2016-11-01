@@ -1,34 +1,31 @@
+
 #include <iostream>
 #include <string.h>
-#include "videogame.h"
-//videogame.cpp
+#include "videogames.h"
+
+//videogames.cpp
 using namespace std;
 
-int main() {
 
-return 0;
-
-};
-
-videogame::VideoGame(char* newtitle, int* newyear, char* newpublisher, float* newrating) {
+VideoGames::VideoGames(char* newtitle, int newyear, char* newpublisher, float newrating) {
 	title = newtitle;
-	year = newyyer;
-	publisher = newpublisher
+	year = newyear;
+	publisher = newpublisher;
 	rating = newrating;
 }
 
-char* videogame::getTitle() {
+char* VideoGames::getTitle() {
 	return title;
 }
 
-int* videogame::getYear() {
+int VideoGames::getYear() {
 	return year;
 }
 
-char* videogame::getPublisher() {
+char* VideoGames::getPublisher() {
 	return publisher;
 }
-float* videogame::getRating() {
+float VideoGames::getRating() {
 	return rating;
 }
 

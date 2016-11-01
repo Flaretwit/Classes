@@ -1,27 +1,23 @@
-#ifndef FLUFFY
-#define FLUFFY
+
 #include <iostream>
 #include <string.h>
 #include "Media.h"
-//videogame.h file
-//
-//
-//
+//videogames.h file
+
 using namespace std;
 
-class VideoGame: public Media{
+class VideoGames: public Media{
 	public:
-		VideoGame();
-		VideoGame(char*, int*, char*, float*);
+		VideoGames();
+		VideoGames(char*, int, char*, float);
 		char* getTitle();
-		int* getYear();
+		int getYear();
 		char* getPublisher();
-		float* getRating();
+		float getRating();
 	private:
 		char* publisher;
-		float* rating;
+		float rating;
 	
 };
 
 
-#endif
