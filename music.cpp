@@ -5,25 +5,35 @@
 
 using namespace std;
 
-Music::Music(char* newtitle, char* newartist, int newyear, float newduration) {
+Music::Music(char* newtitle, char* newartist, int newyear, float newduration, char* newpublisher) {
 	title = newtitle;
 	artist = newartist;
 	year = newyear;
 	duration = newduration;
-}
-
-char* Music::getTitle() {
-	return title;
+	publisher = newpublisher;
 }
 
 char* Music::getArtist() {
 	return artist;
 }
 
-int Music::getYear() {
-	return year;
-}
-
 float Music::getDuration() {
 	return duration;
 }
+
+char* Music::getPublisher() {
+	return publisher;
+}
+
+void Music::setArtist(char* newartist) {
+	artist = newartist;
+}
+
+void Music::setDuration(float newduration) {
+	duration = newduration;
+}
+void Music::setPublisher(char* newpublisher) {
+	publisher = newpublisher;
+}
+
+
