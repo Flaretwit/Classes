@@ -5,47 +5,47 @@
 #include "music.h"
 #include "movies.h"
 //main.cpp
-#define ADD 1;
-#define SEARCH 2;
-#define QUIT 3;
-#define MOVIE 4;
-#define VIDEOGAME 5;
-#define MUSIC 6;
+#define ADD 1
+#define SEARCH 2
+#define QUIT 3
+#define MOVIE 4
+#define VIDEOGAME 5
+#define MUSIC 6
 
 using namespace std;
 
-parseCommand(char* input);
+int whatType();
+int parseCommand(char* input);
+char* getInput();
+void addEntry(vector<Media*> *storage, int type);
+void search(vector<Media*> *storage);
 
 int main() {
 	char input[10];
-	bool continue = true;
+	bool continueon = true;
 	cout << "Storage Facility. Store information about your videogames, movies and music." << endl;
-
-	while(continue) {
+	vector<Media*> *storage = new vector<Media*>();
+	while(continueon) {
 		cout << "What would you like to do? (ADD, SEARCH, or QUIT)";
 		cin >> input;
 		switch(parseCommand(input)) {
 			case ADD:
-				
-
-				
+				addEntry(storage, whatType());
+				break;
+			case 0:
+				cout << "That's not a valid command." << flush;
+				break;		
 		}
 	}
-	vector<Media*> storage;	
 	cout << "Enter the artist";
 	cin >> input;
 	int year = 2000;
 	float rating = 7.9;
 	Movies* m = new Movies(input, input, year, rating, rating);
 	cout << m->getRating();
-
-
 	
-
-	
-return 0;
-}
-
+	return 0;
+	}
 
 
 int parseCommand(char *input) {
@@ -64,7 +64,9 @@ int parseCommand(char *input) {
 	else {
 		return 0;
 	}
+
 }
+
 
 int whatType() {
 	char input[80];
@@ -80,7 +82,7 @@ int whatType() {
 	else if(!strcmp(input, "MUSIC")) {
 		return MUSIC;
 	}
-	else if(!strmp(input, "VIDEOGAME")) {
+	else if(!strcmp(input, "VIDEOGAME")) {
 		return VIDEOGAME;
 	}
 	else {
@@ -99,60 +101,76 @@ char* getInput() {
 			cin.ignore(1000, '\n');
 			cout << "Please enter in nontroll input.";
 			valid = false;			
-	       }	       
-	return input;
-	
+	       }
+	}	       
+	return input;	
+
 }
 //Adds a media to the list. 
 void addEntry(vector<Media*> *storage, int type) {
 	switch(type) {
 		case MOVIE:
-			Movie m;
+			int year;
+			float rating;
+			float duration;
+			Movies *m = new Movies();
 			cout << "Title: " << flush;
-			m->getTitle() = getInput();
+			m->setTitle(getInput());
 			cout << "Year: " << flush;
-			cin >> m->getYear();
+			cin >> year;
+			m->setYear(year);
 			cout << "Director: " << flush;
-			m->director = getInput();
+			m->setDirector(getInput());
 			cout << "Duration: " << flush;
-			cin >> m->duration;
+			cin >> duration;
+			m->setDuration(duration);
 			cout << "Rating: " << flush;
-			cin >> m->rating;
+			cin >> rating;
+			m->setRating(rating);
+
 			storage->push_back(m);
 			cout << "Movie added." << endl;
 			break;
 		case VIDEOGAME:
-			VideoGame vg;
+			int year;
+			float rating;
+			VideoGames *vg = new VideoGames();
 			cout << "Title: " << flush;
-			vg->title = getInput();
+			vg->setTitle(getInput());
 			cout << "Year: " << flush;
-			cin >> vg->year;
+			cin >> year;
+			vg->setYear(year);
 			cout << "Publisher: " << flush;
-			vg->publisher = getInput();
+			vg->setPublisher(getInput());
 			cout << "Rating: " << flush;
-			cin >> vg->rating;
+			cin >> rating;
+			vg->setRating(rating);
 			storage->push_back(vg);
 			cout << "Videogame added." << endl;
 			break;
 		case MUSIC:
-			Music m;
+			float duration;
+			int year;
+			
+			Music *mu = new Music();
 			cout << "Title: " << flush;
-			m->getTitle() = getInput();
+			mu->setTitle(getInput());
 			cout << "Artist: " << flush;
-			m->artist = getInput();
+			mu->setArtist(getInput());
 			cout << "Year: " << flush;
-			cin >> m->getYear();
+			cin >> year;
+			mu->setYear(year);
 			cout << "Duration: " << flush;
-			cin >> m->duration;
+			cin >> duration;
+			mu->setDuration(duration);
 			cout << "Publisher: " << flush;
-			m->publisher = getInput();
+			mu->setPublisher(getInput());
 			storage->push_back(m);
 			cout << "Music added." << endl;
 			break;
 		case 0:
 			cout << "That's not a valid type of media." << endl;
 			break;
-
 		}	
 }
 

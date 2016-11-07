@@ -14,6 +14,10 @@ class Movies: public Media {
 		int getYear();
 		float getDuration();
 		float getRating();
+		void setDirector(char*);
+		void setDuration(float);
+		void setRating(float);
+		
 	private:
 		char* director;
 		float duration;

@@ -29,6 +29,15 @@ float VideoGames::getRating() {
 	return rating;
 }
 
+void VideoGames::setRating(float newrating) {
+	rating = newrating;
+}
+
+void VideoGames::setPublisher(char *newpublisher) {
+	publisher = newpublisher;
+}
+
+
 
 
 

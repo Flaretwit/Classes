@@ -14,6 +14,8 @@ class VideoGames: public Media{
 		int getYear();
 		char* getPublisher();
 		float getRating();
+		void setPublisher(char*);
+		void setRating(float);
 	private:
 		char* publisher;
 		float rating;

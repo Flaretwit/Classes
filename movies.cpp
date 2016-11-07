@@ -29,3 +29,13 @@ float Movies::getDuration() {
 float Movies::getRating() {
 	return rating;
 }
+
+void Movies::setDirector(char* newdirector) {
+	director = newdirector;
+}
+void Movies::setDuration(float newduration) {
+	duration = newduration;
+}
+void Movies::setRating(float newrating) {
+	rating = newrating;
+}

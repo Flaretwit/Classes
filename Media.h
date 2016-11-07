@@ -10,6 +10,8 @@ class Media {
 		Media();
 		char* getTitle();
 		int* getYear();
+		void setYear(int );
+		void setTitle(char*);
 	protected:
 		char* title;
 		int year;
