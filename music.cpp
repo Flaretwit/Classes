@@ -5,12 +5,12 @@
 
 using namespace std;
 
-Music::Music(char* newtitle, char* newartist, int newyear, float newduration, char* newpublisher) {
-	title = newtitle;
-	artist = newartist;
-	year = newyear;
-	duration = newduration;
-	publisher = newpublisher;
+Music::Music() {
+	title = new char[80];
+	artist = new char[80];
+	year = 0;
+	duration = 0;
+	publisher = new char[80];
 }
 
 char* Music::getArtist() {

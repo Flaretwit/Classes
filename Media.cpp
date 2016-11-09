@@ -5,18 +5,22 @@
 
 using namespace std;
 
-Media::getTitle() {
+Media::Media() {
+	title = new char[80];
+	year = 0;
+}
+char* Media::getTitle() {
 	return title;
 }
 
-Media::getYear() {
+int Media::getYear() {
 	return year;
 }
 
-Media::setYear(int newyear) {
+void Media::setYear(int newyear) {
 	year = newyear;
 }
 
-Media::setTitle(char* newtitle) {
+void Media::setTitle(char* newtitle) {
 	title = newtitle;
 }

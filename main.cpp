@@ -32,6 +32,8 @@ int main() {
 			case ADD:
 				addEntry(storage, whatType());
 				break;
+			case SEARCH:
+
 			case 0:
 				cout << "That's not a valid command." << flush;
 				break;		
@@ -41,8 +43,7 @@ int main() {
 	cin >> input;
 	int year = 2000;
 	float rating = 7.9;
-	Movies* m = new Movies(input, input, year, rating, rating);
-	cout << m->getRating();
+
 	
 	return 0;
 	}
@@ -91,6 +92,7 @@ int whatType() {
 }
 
 char* getInput() {
+	cin.ignore();
 	char *input = new char[80];
 	bool valid = false;
 	while(valid == false) {
@@ -108,11 +110,12 @@ char* getInput() {
 }
 //Adds a media to the list. 
 void addEntry(vector<Media*> *storage, int type) {
+	cin.ignore();
 	switch(type) {
-		case MOVIE:
-			int year;
-			float rating;
-			float duration;
+		int year;
+		float rating;
+		float duration;
+		case MOVIE: {
 			Movies *m = new Movies();
 			cout << "Title: " << flush;
 			m->setTitle(getInput());
@@ -131,9 +134,9 @@ void addEntry(vector<Media*> *storage, int type) {
 			storage->push_back(m);
 			cout << "Movie added." << endl;
 			break;
+			}
 		case VIDEOGAME:
-			int year;
-			float rating;
+			{
 			VideoGames *vg = new VideoGames();
 			cout << "Title: " << flush;
 			vg->setTitle(getInput());
@@ -148,15 +151,13 @@ void addEntry(vector<Media*> *storage, int type) {
 			storage->push_back(vg);
 			cout << "Videogame added." << endl;
 			break;
-		case MUSIC:
-			float duration;
-			int year;
-			
+			}
+		case MUSIC: {
 			Music *mu = new Music();
 			cout << "Title: " << flush;
 			mu->setTitle(getInput());
 			cout << "Artist: " << flush;
-			mu->setArtist(getInput());
+				mu->setArtist(getInput());
 			cout << "Year: " << flush;
 			cin >> year;
 			mu->setYear(year);
@@ -165,9 +166,10 @@ void addEntry(vector<Media*> *storage, int type) {
 			mu->setDuration(duration);
 			cout << "Publisher: " << flush;
 			mu->setPublisher(getInput());
-			storage->push_back(m);
+			storage->push_back(mu);
 			cout << "Music added." << endl;
 			break;
+			   }
 		case 0:
 			cout << "That's not a valid type of media." << endl;
 			break;
@@ -175,6 +177,26 @@ void addEntry(vector<Media*> *storage, int type) {
 }
 
 void search(vector<Media*> *storage) {
-	
+	char choice[80];
+	cout << "Search by Title or Year?";
+	choice = getInput();
+	for(int i = 0; choice[i]; i++) {
+		choice[i] = toupper(choice[i]);
+	}
+	if(!strcmp(choice, "YEAR"))  {
+		cout << "What year?";
+		int year;
+		cin >> year;
+		for(int i = 0; i < storage->size(); i++) {
+			if(!strcstorage[i].getYear()
+		}
+		
+	} else if(!strcmp("TITLE")) {
+		cout << "What title?";
+		char input[80]
+		input = getInput();
+	}
+
+
 }
 

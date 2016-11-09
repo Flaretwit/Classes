@@ -5,12 +5,12 @@
 
 using namespace std;
 
-Movies::Movies(char* newtitle, char* newdirector, int newyear, float newduration, float newrating) {
-	title = newtitle;
-	year = newyear;
-	director = newdirector;
-	duration = newduration;
-	rating = newrating;
+Movies::Movies() {
+	title = new char[80];
+	year = 0;
+	director = new char[80];
+	duration = 0;
+	rating = 0;
 }
 
 char* Movies::getTitle() {

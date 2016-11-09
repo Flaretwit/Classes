@@ -9,7 +9,7 @@ class Media {
 	public:
 		Media();
 		char* getTitle();
-		int* getYear();
+		int getYear();
 		void setYear(int );
 		void setTitle(char*);
 	protected:

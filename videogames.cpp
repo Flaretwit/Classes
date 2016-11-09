@@ -7,11 +7,11 @@
 using namespace std;
 
 
-VideoGames::VideoGames(char* newtitle, int newyear, char* newpublisher, float newrating) {
-	title = newtitle;
-	year = newyear;
-	publisher = newpublisher;
-	rating = newrating;
+VideoGames::VideoGames() : Media() {
+	title = new char[80];
+	year = 0;
+	publisher = new char[80];
+	rating = 0;
 }
 
 char* VideoGames::getTitle() {
