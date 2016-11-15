@@ -14,6 +14,19 @@ VideoGames::VideoGames() : Media() {
 	rating = 0;
 }
 
+char* VideoGames::getInfo() {
+	char* info = new char[200];
+	strcpy(info, title);
+	strcat(info, ", ");
+	strcat(info, iota(year));
+	strcat(info, ", ");
+	strcat(info, publisher);
+	strcat(info, ", ");
+	strcat(info, iota(rating));
+	strcat(info, " stars");
+	return info;
+}
+
 char* VideoGames::getTitle() {
 	return title;
 }
@@ -25,11 +38,11 @@ int VideoGames::getYear() {
 char* VideoGames::getPublisher() {
 	return publisher;
 }
-float VideoGames::getRating() {
+int VideoGames::getRating() {
 	return rating;
 }
 
-void VideoGames::setRating(float newrating) {
+void VideoGames::setRating(int newrating) {
 	rating = newrating;
 }
 

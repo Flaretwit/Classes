@@ -23,19 +23,38 @@ char* Movies::getDirector() {
 int Movies::getYear() {
 	return year;
 }
-float Movies::getDuration() {
+int Movies::getDuration() {
 	return duration;
 }
-float Movies::getRating() {
+int Movies::getRating() {
 	return rating;
 }
 
 void Movies::setDirector(char* newdirector) {
 	director = newdirector;
 }
-void Movies::setDuration(float newduration) {
+void Movies::setDuration(int newduration) {
 	duration = newduration;
 }
-void Movies::setRating(float newrating) {
+void Movies::setRating(int newrating) {
 	rating = newrating;
 }
+
+char* Movies::getInfo() {
+	char *info = new char[200];
+	strcpy(info, title);
+	strcat(info, ", ");
+	strcat(info, iota(year));
+	strcat(info, ", ");
+	strcat(info, director);
+	strcat(info, ", ");
+	strcat(info, iota(duration));
+	strcat(info, "min");
+	strcat(info, ", ");
+	strcat(info, iota(rating));
+	strcat(info, " stars");
+
+	return info;
+}
+
+

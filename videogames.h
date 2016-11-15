@@ -12,12 +12,13 @@ class VideoGames: public Media{
 		char* getTitle();
 		int getYear();
 		char* getPublisher();
-		float getRating();
+		int getRating();
 		void setPublisher(char*);
-		void setRating(float);
+		void setRating(int);
+		char* getInfo();
 	private:
 		char* publisher;
-		float rating;
+		int rating;
 	
 };
 

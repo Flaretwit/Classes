@@ -12,10 +12,11 @@ class Music: public Media {
 		float getDuration();
 		char* getPublisher();
 		void setArtist(char* );
-		void setDuration(float);
+		void setDuration(int);
 		void setPublisher(char* );
+		char* getInfo();
 	private:
 		char* artist;
-		float duration;
+		int duration;
 		char* publisher;
 };

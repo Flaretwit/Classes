@@ -11,15 +11,16 @@ class Movies: public Media {
 		char* getTitle();
 		char* getDirector();
 		int getYear();
-		float getDuration();
-		float getRating();
+		int getDuration();
+		int getRating();
 		void setDirector(char*);
-		void setDuration(float);
-		void setRating(float);
+		void setDuration(int);
+		void setRating(int);
+		char* getInfo();
 		
 	private:
 		char* director;
-		float duration;
-		float rating;
+		int duration;
+		int rating;
 
 };

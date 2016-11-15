@@ -33,7 +33,8 @@ int main() {
 				addEntry(storage, whatType());
 				break;
 			case SEARCH:
-
+				search(storage);
+				break;
 			case 0:
 				cout << "That's not a valid command." << flush;
 				break;		
@@ -157,7 +158,7 @@ void addEntry(vector<Media*> *storage, int type) {
 			cout << "Title: " << flush;
 			mu->setTitle(getInput());
 			cout << "Artist: " << flush;
-				mu->setArtist(getInput());
+			mu->setArtist(getInput());
 			cout << "Year: " << flush;
 			cin >> year;
 			mu->setYear(year);
@@ -177,7 +178,7 @@ void addEntry(vector<Media*> *storage, int type) {
 }
 
 void search(vector<Media*> *storage) {
-	char choice[80];
+	char *choice;
 	cout << "Search by Title or Year?";
 	choice = getInput();
 	for(int i = 0; choice[i]; i++) {
@@ -188,15 +189,20 @@ void search(vector<Media*> *storage) {
 		int year;
 		cin >> year;
 		for(int i = 0; i < storage->size(); i++) {
-			if(!strcstorage[i].getYear()
+			if(storage[i]->getYear() == year) {
+				cout << storage[i]->getInfo() << endl;
+			}
 		}
 		
-	} else if(!strcmp("TITLE")) {
+	} else if(!strcmp(choice, "TITLE")) {
 		cout << "What title?";
-		char input[80]
+		char *input;
 		input = getInput();
+		for(int i = 0; i < storage->size(); i++) {
+			if(!strcmp(storage[i]->getTitle(), input)) {
+				cout << storage[i]->getInfo() << endl;
+			}
+		}
 	}
-
-
 }
 
