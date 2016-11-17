@@ -12,10 +12,11 @@ class Media {
 		int getYear();
 		void setYear(int );
 		void setTitle(char*);
+		virtual char* getInfo();
+		char* convert(int );
 	protected:
 		char* title;
 		int year;
 };
-
 
 #endif

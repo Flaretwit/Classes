@@ -93,7 +93,6 @@ int whatType() {
 }
 
 char* getInput() {
-	cin.ignore();
 	char *input = new char[80];
 	bool valid = false;
 	while(valid == false) {
@@ -105,7 +104,8 @@ char* getInput() {
 			cout << "Please enter in nontroll input.";
 			valid = false;			
 	       }
-	}	       
+	}
+       	cout << "function input: " << input;	
 	return input;	
 
 }
@@ -189,8 +189,8 @@ void search(vector<Media*> *storage) {
 		int year;
 		cin >> year;
 		for(int i = 0; i < storage->size(); i++) {
-			if(storage[i]->getYear() == year) {
-				cout << storage[i]->getInfo() << endl;
+			if(storage->at(i)->getYear() == year) {
+				cout << storage->at(i)->getInfo() << endl;
 			}
 		}
 		
@@ -199,8 +199,8 @@ void search(vector<Media*> *storage) {
 		char *input;
 		input = getInput();
 		for(int i = 0; i < storage->size(); i++) {
-			if(!strcmp(storage[i]->getTitle(), input)) {
-				cout << storage[i]->getInfo() << endl;
+			if(!strcmp(storage->at(i)->getTitle(), input)) {
+				cout << storage->at(i)->getInfo() << endl;
 			}
 		}
 	}

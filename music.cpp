@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include "music.h"
+#include <sstream>
 //music.cpp
 
 using namespace std;
@@ -38,18 +39,17 @@ void Music::setPublisher(char* newpublisher) {
 
 char* Music::getInfo() {
 	char *info = new char[200];
-	strcpy(info, title);
+	strcat(info, title);
 	strcat(info, ", ");
 	strcat(info, artist);
 	strcat(info, ", ");
-	strcat(info, iota(year));
+	strcat(info, convert(year));
 	strcat(info, ", ");
-	strcat(info, iota(duration));
+	strcat(info, convert(duration));
+	strcat(info, " mins");
 	strcat(info, ", ");
 	strcat(info, publisher);
-
 	return info;
-
 }
 
 

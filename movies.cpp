@@ -44,14 +44,14 @@ char* Movies::getInfo() {
 	char *info = new char[200];
 	strcpy(info, title);
 	strcat(info, ", ");
-	strcat(info, iota(year));
+	strcat(info, convert(year));
 	strcat(info, ", ");
 	strcat(info, director);
 	strcat(info, ", ");
-	strcat(info, iota(duration));
+	strcat(info, convert(duration));
 	strcat(info, "min");
 	strcat(info, ", ");
-	strcat(info, iota(rating));
+	strcat(info, convert(rating));
 	strcat(info, " stars");
 
 	return info;
