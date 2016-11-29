@@ -13,6 +13,11 @@ Movies::Movies() {
 	rating = 0;
 }
 
+Movies::~Movies() {
+	delete title;
+	delete director;
+}
+
 char* Movies::getTitle() {
 	return title;
 }

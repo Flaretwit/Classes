@@ -11,6 +11,18 @@ Media::Media() {
 	year = 0;
 }
 
+Media::~Media() {
+	delete title;
+}
+
+int getType() {
+	return type;
+}
+
+void setType(int newtype) {
+	type = newtype;
+}
+
 char* Media::getInfo() {
 	char *input = new char[5];
 	return input;

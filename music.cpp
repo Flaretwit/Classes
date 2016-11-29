@@ -5,7 +5,7 @@
 //music.cpp
 
 using namespace std;
-
+//constructor
 Music::Music() {
 	title = new char[80];
 	artist = new char[80];
@@ -13,7 +13,12 @@ Music::Music() {
 	duration = 0;
 	publisher = new char[80];
 }
-
+//descructor
+Music::~Music() {
+	delete title;
+	delete artist;
+	delete publisher;
+}
 char* Music::getArtist() {
 	return artist;
 }

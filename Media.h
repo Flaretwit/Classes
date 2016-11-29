@@ -8,15 +8,19 @@
 class Media {
 	public:
 		Media();
+		~Media();
 		char* getTitle();
 		int getYear();
 		void setYear(int );
 		void setTitle(char*);
 		virtual char* getInfo();
 		char* convert(int );
+		int getType();
+		void setType(int );
 	protected:
 		char* title;
 		int year;
+		int type;
 };
 
 #endif

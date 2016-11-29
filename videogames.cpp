@@ -6,12 +6,17 @@
 //videogames.cpp
 using namespace std;
 
-
+//constructor
 VideoGames::VideoGames() : Media() {
 	title = new char[80];
 	year = 0;
 	publisher = new char[80];
 	rating = 0;
+}
+//destructor
+VideoGames::~VideoGames() : Media() {
+	delete title;
+	delete publisher;
 }
 
 char* VideoGames::getInfo() {
