@@ -15,11 +15,11 @@ Media::~Media() {
 	delete title;
 }
 
-int getType() {
+int Media::getType() {
 	return type;
 }
 
-void setType(int newtype) {
+void Media::setType(int newtype) {
 	type = newtype;
 }
 

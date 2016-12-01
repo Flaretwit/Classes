@@ -9,6 +9,7 @@ using namespace std;
 class VideoGames: public Media{
 	public:
 		VideoGames();
+		~VideoGames();
 		char* getTitle();
 		int getYear();
 		char* getPublisher();

@@ -7,15 +7,14 @@
 using namespace std;
 
 //constructor
-VideoGames::VideoGames() : Media() {
+VideoGames::VideoGames() {
 	title = new char[80];
 	year = 0;
 	publisher = new char[80];
 	rating = 0;
 }
 //destructor
-VideoGames::~VideoGames() : Media() {
-	delete title;
+VideoGames::~VideoGames() {
 	delete publisher;
 }
 

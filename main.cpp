@@ -34,7 +34,7 @@ int main() {
 	cout << "Storage Facility. Store information about your videogames, movies and music." << endl;
 	vector<Media*> *storage = new vector<Media*>();
 	while(continueon) {
-		cout << "What would you like to do? (ADD, SEARCH, or QUIT)";
+		cout << "What would you like to do? (ADD, SEARCH, DELETE or QUIT)";
 		cin >> input;
 		cin.ignore();
 		switch(parseCommand(input)) {
@@ -55,7 +55,6 @@ int main() {
 
 	return 0;
 	}
-
 
 int parseCommand(char *input) {
 	for(int i = 0; input[i]; i++) {
@@ -130,19 +129,12 @@ void deleteEntry(vector<Media*> *storage)  {
 		cout << "What year?";
 		int year;
 		cin >> year;
+		cin.ignore();
 		for(int i = 0; i < storage->size(); i++) {
 			if(storage->at(i)->getYear() == year) {
-			switch(storage->at(i)->getType()) {
-				case MOVIE:
-					delete (Movies*) (storage->at(i));
-					break;
-				case MUSIC:
-					delete (Music*) (storage->at(i));
-					break;
-				case VIDEOGAME:
-					delete (VideoGames*) (storage->at(i));
-					break;
-			}
+				delete storage->at(i);
+				storage->erase(storage->begin() + i);
+				cout << "Deleted" << flush;
 			}
 		}
 		
@@ -152,17 +144,9 @@ void deleteEntry(vector<Media*> *storage)  {
 		input = getInput();
 		for(int i = 0; i < storage->size(); i++) {
 			if(!strcmp(storage->at(i)->getTitle(), input)) {
-				switch(storage->at(i)->getType()) {
-				case MOVIE:
-					delete (Movies*) (storage->at(i));
-					break;
-				case MUSIC:
-					delete (Music*) (storage->at(i));
-					break;
-				case VIDEOGAME:
-					delete (VideoGames*) (storage->at(i));
-					break;						
-				}
+				delete storage->at(i);
+				storage->erase(storage->begin() + i);
+				cout << "Deleted" << flush;
 			}
 		}
 	}

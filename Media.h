@@ -8,7 +8,7 @@
 class Media {
 	public:
 		Media();
-		~Media();
+		virtual ~Media();
 		char* getTitle();
 		int getYear();
 		void setYear(int );

@@ -14,7 +14,6 @@ Movies::Movies() {
 }
 
 Movies::~Movies() {
-	delete title;
 	delete director;
 }
 

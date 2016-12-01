@@ -13,9 +13,8 @@ Music::Music() {
 	duration = 0;
 	publisher = new char[80];
 }
-//descructor
+//destructor
 Music::~Music() {
-	delete title;
 	delete artist;
 	delete publisher;
 }
